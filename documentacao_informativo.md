@@ -4,6 +4,7 @@
 
 É uma página informativa completa sobre a ONG Patinhas Felizes, mostrando nossa história, missão, equipe, instalações e como ajudar. É como um "sobre nós" mais detalhado.
 
+
 **ONG:** Patinhas Felizes 🐾  
 **Página:** informativo.html  
 **Cores:** Verde e branco (tema natureza)  
