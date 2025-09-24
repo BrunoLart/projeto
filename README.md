@@ -4,6 +4,7 @@
 Este projeto faz parte de uma atividade prática de **Desenvolvimento Colaborativo com Git e GitHub**, onde a equipe trabalha em conjunto utilizando versionamento, branches, pull requests e merges.
 
 ---
+![Top Committers](https://github-contributors.vercel.app/api?repo=SEU_USUARIO/SEU_REPOSITORIO&limit=5&size=50&padding=5)
 
 ## 🚀 Funcionalidades
 
