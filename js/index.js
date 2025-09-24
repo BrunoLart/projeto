@@ -158,3 +158,134 @@ function initAnimations()
     // Animação dos números das estatísticas
     animateNumbers();
 }
+
+// === Animação de numeros ===
+function animateNumbers() 
+{
+    const statNumbers = document.querySelectorAll('.stat-item h3');
+    const statsObserver = new IntersectionObserver(function(entries) 
+    {
+        entries.forEach(entry => 
+            {
+            if (entry.isIntersecting) 
+            {
+                const target = entry.target;
+                const finalNumber = parseInt(target.textContent);
+                animateNumber(target, 0, finalNumber, 2000);
+                statsObserver.unobserve(target);
+            }
+        });
+    });
+    
+    statNumbers.forEach(number => 
+    {
+        statsObserver.observe(number);
+    });
+}
+
+function animateNumber(element, start, end, duration) 
+{
+    const range = end - start;
+    const increment = range / (duration / 16);
+    let current = start;
+    
+    const timer = setInterval(function() 
+    {
+        current += increment;
+        if (current >= end) 
+        {
+            current = end;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current) + '+';
+    }, 16);
+}
+
+// === Form doação===
+function initDoacaoForm() 
+{
+    const form = document.getElementById('doacao-form');
+    const valorButtons = document.querySelectorAll('.valor-btn');
+    const valorPersonalizado = document.getElementById('valor-personalizado');
+    let selectedAmount = 0;
+    
+    // Botões de valor pré-definido
+    valorButtons.forEach(button => 
+    {
+        button.addEventListener('click', function(e) 
+        {
+            e.preventDefault();
+            
+            // Remove seleção anterior
+            valorButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Adiciona seleção atual
+            this.classList.add('active');
+            
+            // Armazena valor
+            selectedAmount = parseInt(this.dataset.valor);
+            valorPersonalizado.value = '';
+        });
+    });
+    
+    // Campo de valor personalizado
+    valorPersonalizado.addEventListener('input', function() 
+    {
+        if (this.value) 
+        {
+            valorButtons.forEach(btn => btn.classList.remove('active'));
+            selectedAmount = parseInt(this.value) || 0;
+        }
+    });
+    
+    // Validação e envio do formulário
+    form.addEventListener('submit', function(e) 
+    {
+        e.preventDefault();
+        
+        const nome = document.getElementById('nome-doador').value.trim();
+        const email = document.getElementById('email-doador').value.trim();
+        const telefone = document.getElementById('telefone-doador').value.trim();
+        
+        // Validações
+        if (!nome) 
+        {
+            showMessage('Erro', 'Por favor, preencha seu nome completo.', 'error');
+            return;
+        }
+        
+        if (!email || !isValidEmail(email)) 
+        {
+            showMessage('Erro', 'Por favor, insira um e-mail válido.', 'error');
+            return;
+        }
+        
+        if (selectedAmount < 10) 
+        {
+            showMessage('Erro', 'O valor mínimo para doação é R$ 10,00.', 'error');
+            return;
+        }
+        
+        if (telefone && !isValidPhone(telefone)) 
+        {
+            showMessage('Erro', 'Por favor, insira um telefone válido.', 'error');
+            return;
+        }
+        
+        // Simula envio
+        showLoading(form);
+        
+        setTimeout(() => 
+        {
+            hideLoading(form);
+            showMessage(
+                'Doação Realizada!', 
+                `Obrigado, ${nome}! Sua doação de R$ ${selectedAmount.toFixed(2)} foi registrada. Você receberá um e-mail de confirmação.`, 
+                'success'
+            );
+            form.reset();
+            valorButtons.forEach(btn => btn.classList.remove('active'));
+            selectedAmount = 0;
+        }, 2000);
+    });
+}
