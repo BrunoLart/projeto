@@ -8,7 +8,8 @@
 
 ## 👥 Contribuidores
 
-![Contributors](https://contrib.rocks/image?repo=bruno/projeto_teste)
+Tech Lead: Bruno
+Devs: Emanuel, Vitor, Charles.
 
 ## 📊 GitHub Stats
 
@@ -69,5 +70,4 @@ patas-unidas/
 Projeto dividido em 4 branchs de devs +main.
 Tarefas separadas pelo próprio github
 
-Tech Lead: Bruno
-Devs: Emanuel, Vitor, Charles.
+
