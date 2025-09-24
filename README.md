@@ -6,16 +6,17 @@
 
 > **Patas Unidas** é um site institucional fictício de uma ONG que conecta famílias a animais resgatados, incentivando a adoção responsável.
 
-## 👥 Contribuidores
+## 👥 Contribuidores do Projeto
 
-Tech Lead: Bruno
-Devs: Emanuel, Vitor, Charles.
+![Contributors](https://contrib.rocks/image?repo=bruno/projeto)
 
-## 📊 GitHub Stats
+## 📊 Estatísticas do Repositório
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=bruno&show_icons=true&theme=default&hide_border=true&count_private=true)
+![Repository Stats](https://github-readme-stats.vercel.app/api/pin/?username=bruno&repo=projeto&theme=default&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bruno&layout=compact&theme=default&hide_border=true)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?repo=bruno/projeto&show_icons=true&theme=default&hide_border=true)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=bruno&repo=projeto&layout=compact&theme=default&hide_border=true)
 
 ---
 
@@ -70,4 +71,5 @@ patas-unidas/
 Projeto dividido em 4 branchs de devs +main.
 Tarefas separadas pelo próprio github
 
-
+Tech Lead: Bruno
+Devs: Emanuel, Vitor, Charles.
