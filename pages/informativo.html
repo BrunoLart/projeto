@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="stely.css">
+    <script src="ongPro.js"></script>
     <title>Informativo-ONG de animais</title>
 </head>
 <body>
-    
-   
-        <fieldset class="sobrenos">
-            <h1>Sobre nossa ONG</h1>
-        
-            <p><h2>A Amigos dos Patudos é uma organização sem fins lucrativos
+
+<header><h1>Sobre nossa ONG</h1></header> 
+
+
+<main>
+      <div class="sobreOng">     
+       
+        <p> <h2>A Amigos dos Patudos é uma organização sem fins lucrativos
             dedicada à proteção, resgate 
            e bem-estar de animais em 
            situação de abandono, maus-tratos ou vulnerabilidade. 
@@ -19,32 +23,45 @@
            dar uma nova chance de vida a cães
             e gatos, oferecendo cuidados, abrigo 
            temporário e, principalmente, a 
-           oportunidade de encontrarem lares cheios de amor.</h2></p>
+           oportunidade de encontrarem lares cheios de amor.</h2>
+        </p>
+           <br><br>
 
-           <p><br><strong>Nossa missão:
-            <br> <br>Resgatar animais em risco e proporcionar atendimento veterinário adequado.
+           </div>
+       
+        <div class="missao">
+           <h2>"Nossa missão":
+            <br><br> 
+           Resgatar animais em risco e proporcionar 
+             atendimento veterinário adequado.
 
-            Conscientizar a sociedade sobre guarda responsável, castração e respeito aos animais.
-            
+            Conscientizar a sociedade sobre guarda responsável, 
+            castração e respeito aos animais.
+
             Promover campanhas de adoção responsável.
-            
-            Atuar em projetos educativos em escolas e comunidades.
-           </strong>
-          
 
-           </p>
-        </fieldset>
-           
-            <fieldset class="contato">
-            <legend>Quer fazer parte dessa ONG! deixe seu contato</legend>
-            <label for="name"><strong>Nome:</strong></label>
+            Atuar em projetos educativos em escolas e comunidades.</h2> 
+        
+        </div>
+           <br>
+            <br>
+        
+        
+        <fieldset>
+            <legend><h3>Quer fazer parte do nosso Time! deixe seu contato</h3></legend>
+            <br>
+            <label for="name">Nome:</label>
             <input type="text" id="name" name="name" placeholder="Digite seu nome">
             <br
-            ><label for="email"><strong>email:</strong></label>
-            <input type="text" id="name" name="name" placeholder="Digite seu email">
+            ><label for="email">email:</label>
+            <input type="email" id="email" name="email" placeholder="Digite seu email">
+            <br><button onclick="adicionarCadastro()">Enviar</button>
+            <p id="mensagem"></p>
             
-            <br><button type="submit">Enviar</button>
-       
         </fieldset>
+</main>
+<footer>
+    <p class="paragrafo-footer">&copy ONG resgatando vidas. Todos os direitos reservados </p>
+</footer>
 </body>
 </html>
