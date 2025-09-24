@@ -9,11 +9,11 @@ function adicionarTarefa(){
        const inputTarefa = document.getElementById("inputTarefa")      
         let tarefa = inputTarefa.value.trim() //value é o valor do input/ 
         
-        
+        // validação reGex campo doação.
         const inputTarefaRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
         
         if (!inputTarefaRegex.test(inputTarefa.value)) {
-        alert(('Tarefa inválido - POR FAVOR insira uma tarefa válida!! .'))
+        alert(('Doação inválido - POR FAVOR insira uma doação válida!! .'))
         return;
     
     }
@@ -25,12 +25,12 @@ function adicionarTarefa(){
         
          if(tarefa == ""){
 
-            let mensagemErro = "Digite uma tarefa para sua lista"
+            let mensagemErro = "Doação inválida"
             mensagem.textContent = mensagemErro; 
              mensagem.style.color = "red";
         }  else{ 
        
-        let mensagemSucesso = "Tarefa adicionada com sucesso!";
+        let mensagemSucesso = "Doação  adicionada com sucesso, Obrigado pela sua doação !";
          mensagem.textContent = mensagemSucesso; 
          mensagem.style.color = "green";  
          tarefas.push(tarefa)
