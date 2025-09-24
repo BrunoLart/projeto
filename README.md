@@ -1,5 +1,25 @@
 # 🐾 Patas Unidas
 
+[![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
+[![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)](https://developer.mozilla.org/pt-BR/docs/Web/CSS)
+[![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+
+> **Patas Unidas** é um site institucional fictício de uma ONG que conecta famílias a animais resgatados, incentivando a adoção responsável.
+
+## 👥 Contribuidores do Projeto
+
+![Contributors](https://contrib.rocks/image?repo=BrunoLart/projeto)
+
+## 📊 Estatísticas do Repositório
+
+![Repository Stats](https://github-readme-stats.vercel.app/api/pin/?username=BrunoLart&repo=projeto&theme=default&hide_border=true)
+
+
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=BrunoLart&repo=projeto&layout=compact&theme=default&hide_border=true)
+
+---
+
 **Patas Unidas** é um site institucional fictício de uma ONG que conecta famílias a animais resgatados, incentivando a adoção responsável.  
 Este projeto faz parte de uma atividade prática de **Desenvolvimento Colaborativo com Git e GitHub**, onde a equipe trabalha em conjunto utilizando versionamento, branches, pull requests e merges.
 
