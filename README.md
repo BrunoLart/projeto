@@ -14,7 +14,7 @@
 
 ![Repository Stats](https://github-readme-stats.vercel.app/api/pin/?username=BrunoLart&repo=projeto&theme=default&hide_border=true)
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?repo=BrunoLart/projeto&show_icons=true&theme=default&hide_border=true)
+
 
 ![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=BrunoLart&repo=projeto&layout=compact&theme=default&hide_border=true)
 
