@@ -1,291 +1,245 @@
-// JavaScript para ONG Patinhas Felizes - Página Principal
+// Arquivo: js/index.js
+// Autor: [Vitor]
+// Data: 24/09/2025
 
-// Aguarda o DOM carregar
-document.addEventListener('DOMContentLoaded', function() 
+document.addEventListener('DOMContentLoaded', () => 
 {
-    // Inicializa todas as funcionalidades
-    initNavbar();
-    initSmoothScroll();
-    initAnimations();
-    initDoacaoForm();
-    initNewsletterForm();
-    initMobileMenu();
-});
 
-// === NAVBAR FUNCTIONS ===
-function initNavbar() 
-{
-    const navbar = document.querySelector('.navbar');
-    let lastScrollTop = 0;
-    
-    window.addEventListener('scroll', function() 
+    // --- Efeito de rolagem no cabeçalho ---
+    const cabecalho = document.querySelector('.cabecalho');
+    window.addEventListener('scroll', () => 
     {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        
-        // Adiciona/remove classe baseada no scroll
-        if (scrollTop > 100) 
+        if (window.scrollY > 50) 
         {
-            navbar.classList.add('scrolled');
+            cabecalho.classList.add('rolagem');
         } 
         else 
         {
-            navbar.classList.remove('scrolled');
-        }
-        
-        lastScrollTop = scrollTop;
-    });
-    
-    // Ativa link ativo baseado na seção visível
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
-    
-    window.addEventListener('scroll', function() 
-    {
-        let current = '';
-        
-        sections.forEach(section => 
-        {
-            const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            
-            if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionTop + sectionHeight) 
-            {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => 
-        {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) 
-            {
-                link.classList.add('active');
-            }
-        });
-    });
-}
-
-// === MOBILE MENU ===
-function initMobileMenu() 
-{
-    const hamburger = document.getElementById('hamburger');
-    const navMenu = document.getElementById('nav-menu');
-    
-    hamburger.addEventListener('click', function() 
-    {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
-    });
-    
-    // Fecha menu ao clicar em um link
-    document.querySelectorAll('.nav-link').forEach(link => 
-    {
-        link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        });
-    });
-    
-    // Fecha menu ao clicar fora
-    document.addEventListener('click', function(event) 
-    {
-        const isClickInsideNav = navMenu.contains(event.target) || hamburger.contains(event.target);
-        if (!isClickInsideNav) 
-        {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
+            cabecalho.classList.remove('rolagem');
         }
     });
-}
 
-// === Rolagem suave ===
-function initSmoothScroll() 
-{
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => 
+    // --- Animações ao rolar a página (Intersection Observer) ---
+    const observer = new IntersectionObserver((entries) => 
     {
-        anchor.addEventListener('click', function(e) 
+        entries.forEach(entry => 
         {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            
-            if (target) 
+            if (entry.isIntersecting) 
             {
-                const headerHeight = document.querySelector('.navbar').offsetHeight;
-                const targetPosition = target.offsetTop - headerHeight - 20;
-                
-                window.scrollTo(
+                entry.target.classList.add('visivel');
+            }
+        });
+    }, {
+        threshold: 0.1
+    });
+
+    const elementosAnimar = document.querySelectorAll('.animar');
+    elementosAnimar.forEach(el => observer.observe(el));
+
+
+    // --- Funcionalidade dos Pop-ups Laterais ---
+    const popupNoticias = document.getElementById('popup-noticias');
+    const popupDicas = document.getElementById('popup-dicas');
+
+    // Apenas executa o código dos pop-ups se eles existirem na página
+    if (popupNoticias && popupDicas) 
+    {
+        const noticias = [
+            { texto: "Estudo revela que cães entendem mais de 80 palavras humanas.", imagem: "https://placedog.net/300/200?id=15" },
+            { texto: "Gatos podem fazer mais de 100 sons diferentes, enquanto cães fazem apenas cerca de 10.", imagem: "https://placedog.net/300/200?id=16" },
+            { texto: "Nova lei de proteção animal é aprovada com penas mais rígidas.", imagem: "https://placedog.net/300/200?id=17" }
+        ];
+
+        const dicas = [
+            { texto: "Escove os dentes do seu pet regularmente para prevenir doenças bucais.", imagem: "https://placedog.net/300/200?id=25" },
+            { texto: "Passeios diários são essenciais para a saúde física e mental do seu cão.", imagem: "https://placedog.net/300/200?id=26" },
+            { texto: "Mantenha a caixa de areia do seu gato sempre limpa para evitar problemas de comportamento.", imagem: "https://placedog.net/300/200?id=27" }
+        ];
+
+        let noticiaAtual = 0;
+        let dicaAtual = 0;
+        
+        const noticiaTexto = document.getElementById('noticia-texto');
+        const noticiaImagem = document.getElementById('noticia-imagem');
+        const dicaTexto = document.getElementById('dica-texto');
+        const dicaImagem = document.getElementById('dica-imagem');
+
+        function mostrarPopups() 
+        {
+            popupNoticias.classList.add('visivel');
+            popupDicas.classList.add('visivel');
+        }
+
+        function fecharPopup(e) 
+        {
+            if (e.target.classList.contains('fechar-popup')) 
+            {
+                const popupId = e.target.getAttribute('data-popup');
+                const popup = document.getElementById(popupId);
+                if (popup) 
                 {
-                    top: targetPosition,
-                    behavior: 'smooth'
-                });
+                    popup.classList.remove('visivel');
+                }
             }
-        });
-    });
-}
-
-// === Animações ===
-function initAnimations() 
-{
-    // Intersection Observer para animações de entrada
-    const observerOptions = 
-    {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-    
-    const observer = new IntersectionObserver(function(entries) 
-    {
-        entries.forEach(entry => 
-        {
-            if (entry.isIntersecting) 
-            {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-    
-    // Observa elementos para animação
-    const animateElements = document.querySelectorAll('.sobre-card, .animal-card, .noticia-card, .contato-item, .stat-item');
-    animateElements.forEach(el => 
-    {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(30px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
-    
-    // Animação dos números das estatísticas
-    animateNumbers();
-}
-
-// === Animação de numeros ===
-function animateNumbers() 
-{
-    const statNumbers = document.querySelectorAll('.stat-item h3');
-    const statsObserver = new IntersectionObserver(function(entries) 
-    {
-        entries.forEach(entry => 
-            {
-            if (entry.isIntersecting) 
-            {
-                const target = entry.target;
-                const finalNumber = parseInt(target.textContent);
-                animateNumber(target, 0, finalNumber, 2000);
-                statsObserver.unobserve(target);
-            }
-        });
-    });
-    
-    statNumbers.forEach(number => 
-    {
-        statsObserver.observe(number);
-    });
-}
-
-function animateNumber(element, start, end, duration) 
-{
-    const range = end - start;
-    const increment = range / (duration / 16);
-    let current = start;
-    
-    const timer = setInterval(function() 
-    {
-        current += increment;
-        if (current >= end) 
-        {
-            current = end;
-            clearInterval(timer);
         }
-        element.textContent = Math.floor(current) + '+';
-    }, 16);
-}
 
-// === Form doação===
-function initDoacaoForm() 
-{
-    const form = document.getElementById('doacao-form');
-    const valorButtons = document.querySelectorAll('.valor-btn');
-    const valorPersonalizado = document.getElementById('valor-personalizado');
-    let selectedAmount = 0;
-    
-    // Botões de valor pré-definido
-    valorButtons.forEach(button => 
+        function atualizarNoticia() 
+        {
+            noticiaTexto.textContent = noticias[noticiaAtual].texto;
+            noticiaImagem.src = noticias[noticiaAtual].imagem;
+            noticiaAtual = (noticiaAtual + 1) % noticias.length;
+        }
+
+        function atualizarDica() 
+        {
+            dicaTexto.textContent = dicas[dicaAtual].texto;
+            dicaImagem.src = dicas[dicaAtual].imagem;
+            dicaAtual = (dicaAtual + 1) % dicas.length;
+        }
+
+        // Iniciar pop-ups e ciclagem de conteúdo
+        setTimeout(mostrarPopups, 2000);
+        
+        atualizarNoticia();
+        atualizarDica();
+
+        setInterval(atualizarNoticia, 5000);
+        setInterval(atualizarDica, 7000);
+
+        document.body.addEventListener('click', fecharPopup);
+    }
+
+    // --- Funcionalidade do Formulário de Doação ---
+    const formDoacao = document.querySelector('.form-doacao');
+    if (formDoacao) 
     {
-        button.addEventListener('click', function(e) 
+        const botoesValor = formDoacao.querySelectorAll('.btn-valor');
+        const inputOutroValor = formDoacao.querySelector('input[name="valor"]');
+        const inputNome = formDoacao.querySelector('input[name="nome"]');
+        const inputEmail = formDoacao.querySelector('input[name="email"]');
+
+        botoesValor.forEach(botao => 
+        {
+            botao.addEventListener('click', () => 
+            {
+                botoesValor.forEach(btn => btn.classList.remove('selecionado'));
+                botao.classList.add('selecionado');
+                inputOutroValor.value = '';
+                validarCampo(inputOutroValor, false);
+            });
+        });
+        
+        inputOutroValor.addEventListener('input', () => 
+        {
+            botoesValor.forEach(btn => btn.classList.remove('selecionado'));
+            validarValorDoacao(inputOutroValor);
+        });
+
+        inputNome.addEventListener('input', () => validarCampo(inputNome));
+        inputEmail.addEventListener('input', () => validarEmail(inputEmail));
+
+        formDoacao.addEventListener('submit', (e) => 
         {
             e.preventDefault();
+            const isNomeValido = validarCampo(inputNome);
+            const isEmailValido = validarEmail(inputEmail);
+            const isValorValido = validarValorDoacao(inputOutroValor) || Array.from(botoesValor).some(b => b.classList.contains('selecionado'));
             
-            // Remove seleção anterior
-            valorButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Adiciona seleção atual
-            this.classList.add('active');
-            
-            // Armazena valor
-            selectedAmount = parseInt(this.dataset.valor);
-            valorPersonalizado.value = '';
+            if (!isValorValido && !Array.from(botoesValor).some(b => b.classList.contains('selecionado'))) 
+            {
+                definirErro(inputOutroValor, 'Por favor, selecione ou insira um valor.');
+            } 
+            else if (isValorValido) 
+            {
+                definirSucesso(inputOutroValor);
+            }
+
+            if (isNomeValido && isEmailValido && isValorValido) 
+            {
+                alert('Obrigado pela sua doação!');
+                formDoacao.reset();
+                botoesValor.forEach(btn => btn.classList.remove('selecionado'));
+                document.querySelectorAll('.form-grupo').forEach(fg => fg.classList.remove('sucesso'));
+            }
         });
-    });
-    
-    // Campo de valor personalizado
-    valorPersonalizado.addEventListener('input', function() 
+    }
+
+
+    // --- Funções de Validação ---
+    function definirErro(input, mensagem) 
     {
-        if (this.value) 
-        {
-            valorButtons.forEach(btn => btn.classList.remove('active'));
-            selectedAmount = parseInt(this.value) || 0;
-        }
-    });
-    
-    // Validação e envio do formulário
-    form.addEventListener('submit', function(e) 
+        const formGrupo = input.parentElement;
+        formGrupo.classList.add('erro');
+        formGrupo.classList.remove('sucesso');
+        const small = formGrupo.querySelector('.mensagem-erro');
+        if (small) small.innerText = mensagem;
+    }
+
+    function definirSucesso(input) 
     {
-        e.preventDefault();
-        
-        const nome = document.getElementById('nome-doador').value.trim();
-        const email = document.getElementById('email-doador').value.trim();
-        const telefone = document.getElementById('telefone-doador').value.trim();
-        
-        // Validações
-        if (!nome) 
+        const formGrupo = input.parentElement;
+        formGrupo.classList.add('sucesso');
+        formGrupo.classList.remove('erro');
+        const small = formGrupo.querySelector('.mensagem-erro');
+        if (small) small.innerText = '';
+    }
+
+    function validarCampo(input, required = true) 
+    {
+        if (required && input.value.trim() === '') 
         {
-            showMessage('Erro', 'Por favor, preencha seu nome completo.', 'error');
-            return;
+            definirErro(input, 'Este campo é obrigatório.');
+            return false;
+        } 
+        else 
+        {
+            definirSucesso(input);
+            return true;
         }
-        
-        if (!email || !isValidEmail(email)) 
+    }
+
+    function validarEmail(input) 
+    {
+        const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+        if (re.test(String(input.value).toLowerCase())) 
         {
-            showMessage('Erro', 'Por favor, insira um e-mail válido.', 'error');
-            return;
+            definirSucesso(input);
+            return true;
+        } 
+        else if (input.value.trim() === '') 
+        {
+            definirErro(input, 'Este campo é obrigatório.');
+            return false;
         }
-        
-        if (selectedAmount < 10) 
+        else 
         {
-            showMessage('Erro', 'O valor mínimo para doação é R$ 10,00.', 'error');
-            return;
+            definirErro(input, 'E-mail inválido.');
+            return false;
         }
-        
-        if (telefone && !isValidPhone(telefone)) 
+    }
+
+    function validarValorDoacao(input) 
+    {
+        const valor = parseFloat(input.value);
+        if (input.value.trim() !== '' && (valor < 10 || valor > 1000)) 
         {
-            showMessage('Erro', 'Por favor, insira um telefone válido.', 'error');
-            return;
+            definirErro(input, 'O valor deve ser entre R$ 10 e R$ 1000.');
+            return false;
+        } 
+        else if (input.value.trim() === '') 
+        {
+            // Não é um erro se estiver vazio, pois pode ser um valor fixo
+             const formGrupo = input.parentElement;
+            formGrupo.classList.remove('erro', 'sucesso');
+            const small = formGrupo.querySelector('.mensagem-erro');
+            if (small) small.innerText = '';
+            return false; // Retorna false pois não há valor válido AINDA
         }
-        
-        // Simula envio
-        showLoading(form);
-        
-        setTimeout(() => 
+        else 
         {
-            hideLoading(form);
-            showMessage(
-                'Doação Realizada!', 
-                `Obrigado, ${nome}! Sua doação de R$ ${selectedAmount.toFixed(2)} foi registrada. Você receberá um e-mail de confirmação.`, 
-                'success'
-            );
-            form.reset();
-            valorButtons.forEach(btn => btn.classList.remove('active'));
-            selectedAmount = 0;
-        }, 2000);
-    });
-}
+            definirSucesso(input);
+            return true;
+        }
+    }
+
+});
