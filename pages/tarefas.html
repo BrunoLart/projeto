@@ -3,25 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lista de doações</title>
     <link rel="stylesheet" href="stely.css">
-    
+    <title>Projeto - Adicionar tarefas</title>
 </head>
 <body>
     <div class="container">
-        <h1>Lista de doações</h1>
-        <p>Adicione suas doações!</p>
-        <input type="text" id="inputTarefa" placeholder="Digite a sua doação">
-        
-        <!--botão para adicionar tarefas-->
-        <button onclick="adicionarTarefa()">Adicionar doação</button>
+        <h1>Lista de tarefas</h1>
+        <p><strong>Adicione suas tarefas!</strong></p>
+        <input type="text" id="inputTarefa" placeholder="Digite a sua tarefa">
+
+        <button onclick="adicionnartarefa()"><strong>Adicionar</strong></button>
         <p id="mensagem"></p>
         
         <ul id="listaTarefas"></ul>
         
     </div>
-
-<!--linkr com o JS-->
     <script src="script.js"></script>
 
 </body>
