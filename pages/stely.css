@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+
+    font-weight: 100;
+    padding: 2rem;
+    background-color: #331f19;
+    text-align: center;
+
+}
+
+header h1{
+    color: antiquewhite;
+}
+
+main{
+
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.missao{
+font-weight: 100;
+    padding: 2rem;
+    background-color: #331f19;
+    text-align: center;
+
+}
+
+.missao h2{
+
+    color: antiquewhite;
+}
+
+fieldset{
+border: 2px solid #CCD595;
+    border-radius: 5px;
+    padding: 1rem;
+    
+}
+input[type="text"], [type="email"]{
+
+     width: 100%;
+    padding: 0.6rem;
+    border: 1px solid #CCD595;
+    outline: none;
+    border-radius: 5px;
+    background-color: transparent;
+    
+}
+input::placeholder {
+    color: #798252;
+    font-size: 16px;
+}
+body {
+    background-color: #F4F0EA;
+    color: #798252;
+    font-family: "Cabin", sans-serif;
+    font-weight: 400;
+}
+
+button {
+    background-color: #CCD595;
+    border: none;
+    padding: 0.8rem;
+    color: #331f19;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+footer {
+    background-color: #331f19;
+    padding: 2rem;
+    text-align: center;
+}
+
+button:hover{
+    background-color: #798252;
+}
