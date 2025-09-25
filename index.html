@@ -4,209 +4,74 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ONG Patinhas Felizes - Adoção de Animais</title>
-    <link rel="stylesheet" href="css/index.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <h2>🐾 Patinhas Felizes</h2>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Início</a>
-                <a href="#animais" class="nav-link">Animais</a>
-                <a href="#noticias" class="nav-link">Notícias</a>
-                <a href="#doacoes" class="nav-link">Doações</a>
-                <a href="pages/cadastro.html" class="nav-link btn-adotar">Quero Adotar</a>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Dando uma Segunda Chance aos Nossos Amigos de Quatro Patas</h1>
-                <p class="hero-description">
-                    Na ONG Patinhas Felizes, resgatamos, cuidamos e encontramos lares amorosos para cães e gatos abandonados. 
-                    Junte-se à nossa missão de transformar vidas!
-                </p>
-                <div class="hero-buttons">
-                    <a href="#animais" class="btn btn-primary">Ver Animais</a>
-                    <a href="pages/cadastro.html" class="btn btn-secondary">Adotar Agora</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-placeholder">
-                    <span>🐕🐱</span>
-                    <p>Amigos esperando por você!</p>
-                </div>
-            </div>
+    <!-- Cabeçalho -->
+    <header class="cabecalho">
+        <div class="container">
+            <a href="index.html" class="logo">
+                🐾 Patinhas Felizes
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html" style="border-bottom: 2px solid var(--verde-claro);">Início</a></li>
+                    <li><a href="pages/informativo.html">Sobre Nós</a></li>
+                    <li><a href="pages/cadastro.html">Quero Adotar</a></li>
+                    <li><a href="pages/contato.html">Entrar em Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Seção Principal (Hero) -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <h1>Encontre seu novo melhor amigo</h1>
+            <p>Ajudamos centenas de animais a encontrar um lar seguro e feliz. Adote, doe e faça a diferença!</p>
+            <a href="pages/cadastro.html" class="btn btn-principal">Quero Adotar</a>
+            <a href="#doacoes" class="btn btn-secundario">Quero Doar</a>
         </div>
     </section>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-content">
-                <h1 class="hero-title">Dando uma Segunda Chance aos Nossos Amigos de Quatro Patas</h1>
-                <p class="hero-description">
-                    Na ONG Patinhas Felizes, resgatamos, cuidamos e encontramos lares amorosos para cães e gatos abandonados. 
-                    Junte-se à nossa missão de transformar vidas!
-                </p>
-                <div class="hero-buttons">
-                    <a href="#animais" class="btn btn-primary">Ver Animais</a>
-                    <a href="pages/cadastro.html" class="btn btn-secondary">Adotar Agora</a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="hero-placeholder">
-                    <span>🐕🐱</span>
-                    <p>Amigos esperando por você!</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Estatísticas -->
-    <section class="stats">
-        <div class="stats-container">
-            <div class="stat-item">
-                <h3>500+</h3>
-                <p>Animais Resgatados</p>
-            </div>
-            <div class="stat-item">
-                <h3>300+</h3>
-                <p>Adoções Realizadas</p>
-            </div>
-            <div class="stat-item">
-                <h3>50+</h3>
-                <p>Voluntários Ativos</p>
-            </div>
-            <div class="stat-item">
-                <h3>5</h3>
-                <p>Anos de Trabalho</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Animais em Destaque -->
+    
+    <!-- Animais para Adoção -->
     <section id="animais" class="animais">
         <div class="container">
-            <h2 class="section-title">Nossos Amigos Esperando por Você</h2>
-            <p class="section-subtitle">Conheça alguns dos nossos animais disponíveis para adoção</p>
-            
-            <div class="animais-grid">
-                <div class="animal-card">
-                    <div class="animal-image">
-                        <span>🐕</span>
-                    </div>
-                    <div class="animal-info">
-                        <h3>Max</h3>
-                        <p><strong>Idade:</strong> 2 anos</p>
-                        <p><strong>Raça:</strong> Vira-lata</p>
-                        <p><strong>Personalidade:</strong> Brincalhão e carinhoso</p>
-                        <a href="pages/cadastro.html" class="btn btn-small">Quero Adotar</a>
-                    </div>
+            <h2 class="animar">Prontos para um novo lar</h2>
+            <div class="galeria-animais">
+                <!-- Animal 1 -->
+                <div class="card-animal animar">
+                    <img src="https://placedog.net/500/500?id=1" alt="Cachorro para adoção">
+                    <h3>Rex</h3>
+                    <p>Idade: 2 anos | Raça: Vira-lata</p>
+                    <a href="pages/cadastro.html" class="btn btn-principal">Quero Adotar</a>
                 </div>
-                
-                <div class="animal-card">
-                    <div class="animal-image">
-                        <span>🐱</span>
-                    </div>
-                    <div class="animal-info">
-                        <h3>Luna</h3>
-                        <p><strong>Idade:</strong> 1 ano</p>
-                        <p><strong>Raça:</strong> Siamês</p>
-                        <p><strong>Personalidade:</strong> Calma e independente</p>
-                        <a href="pages/cadastro.html" class="btn btn-small">Quero Adotar</a>
-                    </div>
+                <!-- Animal 2 -->
+                <div class="card-animal animar">
+                    <img src="https://placedog.net/500/500?id=2" alt="Gato para adoção">
+                    <h3>Mimi</h3>
+                    <p>Idade: 1 ano | Raça: Siamês</p>
+                    <a href="pages/cadastro.html" class="btn btn-principal">Quero Adotar</a>
                 </div>
-                
-                <div class="animal-card">
-                    <div class="animal-image">
-                        <span>🐕</span>
-                    </div>
-                    <div class="animal-info">
-                        <h3>Bella</h3>
-                        <p><strong>Idade:</strong> 3 anos</p>
-                        <p><strong>Raça:</strong> Golden Retriever</p>
-                        <p><strong>Personalidade:</strong> Protetora e leal</p>
-                        <a href="pages/cadastro.html" class="btn btn-small">Quero Adotar</a>
-                    </div>
+                <!-- Animal 3 -->
+                <div class="card-animal animar">
+                    <img src="https://placedog.net/500/500?id=3" alt="Cachorro para adoção">
+                    <h3>Thor</h3>
+                    <p>Idade: 3 anos | Raça: Labrador</p>
+                    <a href="pages/cadastro.html" class="btn btn-principal">Quero Adotar</a>
                 </div>
-                
-                <div class="animal-card">
-                    <div class="animal-image">
-                        <span>🐱</span>
-                    </div>
-                    <div class="animal-info">
-                        <h3>Simba</h3>
-                        <p><strong>Idade:</strong> 6 meses</p>
-                        <p><strong>Raça:</strong> Persa</p>
-                        <p><strong>Personalidade:</strong> Curioso e enérgico</p>
-                        <a href="pages/cadastro.html" class="btn btn-small">Quero Adotar</a>
-                    </div>
+                 <!-- Animal 4 -->
+                 <div class="card-animal animar">
+                    <img src="https://placedog.net/500/500?id=4" alt="Gato para adoção">
+                    <h3>Luna</h3>
+                    <p>Idade: 4 anos | Raça: Persa</p>
+                    <a href="pages/cadastro.html" class="btn btn-principal">Quero Adotar</a>
                 </div>
-            </div>
-            
-            <div class="text-center">
-                <a href="pages/cadastro.html" class="btn btn-primary">Ver Todos os Animais</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Notícias -->
-    <section id="noticias" class="noticias">
-        <div class="container">
-            <h2 class="section-title">Últimas Notícias</h2>
-            <p class="section-subtitle">Acompanhe nosso trabalho e histórias de sucesso</p>
-            
-            <div class="noticias-grid">
-                <article class="noticia-card">
-                    <div class="noticia-image">
-                        <span>📰</span>
-                    </div>
-                    <div class="noticia-content">
-                        <h3>Recorde de Adoções em 2024</h3>
-                        <p class="noticia-date">15 de Janeiro, 2024</p>
-                        <p>Em janeiro, batemos nosso recorde com 25 adoções realizadas! Agradecemos a todos que tornaram isso possível.</p>
-                        <a href="#" class="btn btn-small">Ler Mais</a>
-                    </div>
-                </article>
-                
-                <article class="noticia-card">
-                    <div class="noticia-image">
-                        <span>🏥</span>
-                    </div>
-                    <div class="noticia-content">
-                        <h3>Nova Parceria com Clínica Veterinária</h3>
-                        <p class="noticia-date">10 de Janeiro, 2024</p>
-                        <p>Fechamos uma parceria com a Clínica PetCare, que oferecerá descontos especiais para nossos animais.</p>
-                        <a href="#" class="btn btn-small">Ler Mais</a>
-                    </div>
-                </article>
-                
-                <article class="noticia-card">
-                    <div class="noticia-image">
-                        <span>🎉</span>
-                    </div>
-                    <div class="noticia-content">
-                        <h3>Evento de Adoção no Shopping</h3>
-                        <p class="noticia-date">5 de Janeiro, 2024</p>
-                        <p>Nosso próximo evento será no Shopping Center no dia 20/01. Venha conhecer nossos amigos!</p>
-                        <a href="#" class="btn btn-small">Ler Mais</a>
-                    </div>
-                </article>
             </div>
         </div>
     </section>
@@ -214,167 +79,69 @@
     <!-- Doações -->
     <section id="doacoes" class="doacoes">
         <div class="container">
-            <div class="doacoes-content">
-                <div class="doacoes-info">
-                    <h2>Faça a Diferença</h2>
-                    <p>Sua doação ajuda a:</p>
-                    <ul>
-                        <li>🐕 Cuidados veterinários</li>
-                        <li>🍽️ Alimentação dos animais</li>
-                        <li>🏠 Manutenção do abrigo</li>
-                        <li>🚗 Resgate e transporte</li>
-                        <li>💊 Medicamentos e tratamentos</li>
-                    </ul>
-                    <div class="impacto">
-                        <h4>Seu Impacto:</h4>
-                        <p><strong>R$ 50</strong> = Alimenta 1 animal por 1 mês</p>
-                        <p><strong>R$ 100</strong> = Cobre 1 consulta veterinária</p>
-                        <p><strong>R$ 200</strong> = Paga 1 castração</p>
+            <h2 class="animar">Sua doação salva vidas</h2>
+            <p class="animar">Com sua ajuda, podemos continuar nosso trabalho. Cada centavo faz a diferença!</p>
+            <form class="form-doacao animar" novalidate>
+                <div class="form-grupo">
+                    <div class="valores-doacao">
+                        <button type="button" class="btn-valor" data-valor="25">R$ 25</button>
+                        <button type="button" class="btn-valor" data-valor="50">R$ 50</button>
+                        <button type="button" class="btn-valor" data-valor="100">R$ 100</button>
+                        <button type="button" class="btn-valor" data-valor="200">R$ 200</button>
                     </div>
                 </div>
-                
-                <div class="doacoes-form">
-                    <h3>Doar Agora</h3>
-                    <form id="doacao-form">
-                        <div class="form-group">
-                            <label>Valor da Doação</label>
-                            <div class="valor-buttons">
-                                <button type="button" class="valor-btn" data-valor="25">R$ 25</button>
-                                <button type="button" class="valor-btn" data-valor="50">R$ 50</button>
-                                <button type="button" class="valor-btn" data-valor="100">R$ 100</button>
-                                <button type="button" class="valor-btn" data-valor="200">R$ 200</button>
-                            </div>
-                            <input type="number" id="valor-personalizado" placeholder="Outro valor (mín. R$ 10)" min="10" max="1000">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="nome-doador">Nome Completo *</label>
-                            <input type="text" id="nome-doador" name="nome" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="email-doador">E-mail *</label>
-                            <input type="email" id="email-doador" name="email" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="telefone-doador">Telefone</label>
-                            <input type="tel" id="telefone-doador" name="telefone">
-                        </div>
-                        
-                        <button type="submit" class="btn btn-primary btn-full">Fazer Doação</button>
-                    </form>
+                <div class="form-grupo">
+                    <input type="number" name="valor" placeholder="Outro valor (R$ 10-1000)">
+                    <small class="mensagem-erro"></small>
                 </div>
-            </div>
+                <div class="form-grupo">
+                    <input type="text" name="nome" placeholder="Seu nome completo" required>
+                    <small class="mensagem-erro"></small>
+                </div>
+                <div class="form-grupo">
+                    <input type="email" name="email" placeholder="Seu melhor e-mail" required>
+                    <small class="mensagem-erro"></small>
+                </div>
+                <button type="submit" class="btn btn-principal">Doar Agora</button>
+            </form>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <!-- Rodapé -->
+    <footer id="contato" class="rodape">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-logo">
-                    <h3>🐾 Patinhas Felizes</h3>
-                    <p>Transformando vidas através do amor e cuidado animal.</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Links Rápidos</h4>
-                    <a href="#animais">Animais</a>
-                    <a href="#noticias">Notícias</a>
-                    <a href="#doacoes">Doações</a>
-                    <a href="pages/cadastro.html">Adotar</a>
-                </div>
-                
-                <div class="footer-contact">
-                    <h4>Contato</h4>
-                    <p>📧 contato@patinhasfelizes.org</p>
-                    <p>📞 (11) 99999-9999</p>
-                    <p>📍 São Paulo - SP</p>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 ONG Patinhas Felizes. Todos os direitos reservados.</p>
-                <p>Feito com ❤️ para nossos amigos de quatro patas</p>
+            <p>&copy; 2025 ONG Patinhas Felizes. Todos os direitos reservados.</p>
+            <p>Contato: contato@patinhasfelizes.com | (11) 99999-9999</p>
+            <div class="redes-sociais">
+                <a href="#" aria-label="Facebook">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                </a>
             </div>
         </div>
     </footer>
-    
-    <!-- Notícias Laterais Popup -->
-    <div class="news-popup left-popup" id="leftPopup">
-        <div class="popup-header">
-            <h4>📰 Notícias sobre Animais</h4>
-            <button class="close-popup" onclick="closePopup('leftPopup')">×</button>
-        </div>
-        <div class="popup-content">
-            <div class="news-item active">
-                <div class="news-image">
-                    <img src="img/noticia1.jpg" alt="Cachorro resgatado encontra lar">
-                </div>
-                <h5>🐕 Cachorro resgatado encontra lar após 2 anos</h5>
-                <p>Max, um vira-lata de 3 anos, finalmente foi adotado após viver no abrigo por quase 2 anos.</p>
-                <span class="news-time">há 2 horas</span>
-            </div>
-            <div class="news-item">
-                <div class="news-image">
-                    <img src="img/noticia2.jpg" alt="Nova clínica veterinária">
-                </div>
-                <h5>🏥 Nova clínica veterinária abre na região</h5>
-                <p>PetCare inaugura unidade especializada em atendimento gratuito para ONGs.</p>
-                <span class="news-time">há 4 horas</span>
-            </div>
-            <div class="news-item">
-                <div class="news-image">
-                    <img src="img/noticia3.jpg" alt="Evento de adoção bate recorde">
-                </div>
-                <h5>🎉 Evento de adoção bate recorde</h5>
-                <p>Feira no shopping resultou em 15 adoções em um único dia!</p>
-                <span class="news-time">há 6 horas</span>
-            </div>
-        </div>
-        <div class="popup-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+
+    <!-- Pop-ups Laterais -->
+    <div class="popup-lateral" id="popup-noticias">
+        <button class="fechar-popup" data-popup="popup-noticias">&times;</button>
+        <div class="conteudo-popup">
+            <img src="" alt="Notícia do Mundo Animal" id="noticia-imagem">
+            <h3>Notícias do Mundo Animal</h3>
+            <p id="noticia-texto">Carregando notícia...</p>
         </div>
     </div>
 
-    <div class="news-popup right-popup" id="rightPopup">
-        <div class="popup-header">
-            <h4>🐾 Dicas Pet</h4>
-            <button class="close-popup" onclick="closePopup('rightPopup')">×</button>
-        </div>
-        <div class="popup-content">
-            <div class="news-item active">
-                <div class="news-image">
-                    <img src="img/dica1.jpg" alt="Como identificar sinais de doença em pets">
-                </div>
-                <h5>💊 Como identificar sinais de doença em pets</h5>
-                <p>Saiba quais comportamentos indicam que seu animal precisa de cuidados veterinários.</p>
-                <span class="news-time">há 1 hora</span>
-            </div>
-            <div class="news-item">
-                <div class="news-image">
-                    <img src="img/dica2.jpg" alt="Alimentação saudável para cães idosos">
-                </div>
-                <h5>🍽️ Alimentação saudável para cães idosos</h5>
-                <p>Dicas especiais para cuidar da nutrição de cães com mais de 7 anos.</p>
-                <span class="news-time">há 3 horas</span>
-            </div>
-            <div class="news-item">
-                <div class="news-image">
-                    <img src="img/dica3.jpg" alt="Exercícios ideais para gatos domésticos">
-                </div>
-                <h5>🏃‍♂️ Exercícios ideais para gatos domésticos</h5>
-                <p>Como manter seu gato ativo e saudável mesmo dentro de casa.</p>
-                <span class="news-time">há 5 horas</span>
-            </div>
-        </div>
-        <div class="popup-indicators">
-            <span class="indicator active"></span>
-            <span class="indicator"></span>
-            <span class="indicator"></span>
+    <div class="popup-lateral" id="popup-dicas">
+        <button class="fechar-popup" data-popup="popup-dicas">&times;</button>
+        <div class="conteudo-popup">
+            <img src="" alt="Dica de Cuidado Pet" id="dica-imagem">
+            <h3>Dicas de Cuidado Pet</h3>
+            <p id="dica-texto">Carregando dica...</p>
         </div>
     </div>
 
