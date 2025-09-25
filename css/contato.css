@@ -1,0 +1,294 @@
+/* 
+  Estilos para a página de Contato - ONG Patinhas Felizes
+  Autor: [Seu Nome]
+  Data: 24/09/2025
+*/
+
+/* 1. Variáveis de Cores e Fontes */
+:root {
+    --verde-principal: #2E8B57;
+    --verde-claro: #3CB371;
+    --verde-escuro: #228B22;
+    --verde-suave: #E8F5E8;
+    --branco: #FFFFFF;
+    --branco-suave: #F8F9FA;
+    --cinza-texto: #4A4A4A;
+    --sombra-verde: rgba(46, 139, 87, 0.1);
+    --vermelho-erro: #e74c3c;
+
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-titulos: 'Lora', serif;
+    --transicao-padrao: all 0.3s ease-in-out;
+}
+
+/* 2. Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cinza-texto);
+    background-color: var(--branco-suave);
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 {
+    font-family: var(--fonte-titulos);
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.2rem; line-height: 1.2; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.5rem; font-family: var(--fonte-principal); font-weight: 600; }
+
+section {
+    padding: 80px 0;
+    overflow-x: hidden;
+}
+
+/* 3. Botões */
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicao-padrao);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-principal {
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.2);
+}
+
+.btn-principal:hover {
+    background-color: var(--verde-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+}
+
+/* 4. Cabeçalho */
+.cabecalho {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.cabecalho.rolagem {
+    padding: 0.5rem 0;
+    background-color: var(--branco);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cabecalho .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-principal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalho nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho nav a {
+    text-decoration: none;
+    color: var(--verde-escuro);
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.cabecalho nav a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--verde-claro);
+    transition: width 0.3s;
+}
+
+.cabecalho nav a:hover::after {
+    width: 100%;
+}
+
+/* 5. Hero específico para Contato */
+.hero-contato {
+    height: 50vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+    background: linear-gradient(to right, rgba(46, 139, 87, 0.7), transparent), url('https://placedog.net/1200/600?id=30') no-repeat center center/cover;
+}
+
+.hero-contato h1 {
+    color: var(--branco);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+/* 6. Formulários */
+.doacoes {
+    background-color: var(--verde-suave);
+}
+
+.form-contato {
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: var(--branco);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--sombra-verde);
+    position: relative;
+}
+
+.form-grupo {
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+    font-family: var(--fonte-principal);
+}
+
+input[type="date"] {
+    color: var(--cinza-texto);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+    font-family: var(--fonte-principal);
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 3px var(--sombra-verde);
+}
+
+/* Estilos de validação */
+.form-grupo.sucesso input,
+.form-grupo.sucesso textarea {
+    border-color: var(--verde-claro);
+}
+
+.form-grupo.erro input,
+.form-grupo.erro textarea {
+    border-color: var(--vermelho-erro);
+}
+
+.mensagem-erro {
+    color: var(--vermelho-erro);
+    font-size: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.form-grupo.erro .mensagem-erro {
+    opacity: 1;
+}
+
+/* 7. Rodapé */
+.rodape {
+    background-color: var(--verde-escuro);
+    color: var(--branco-suave);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.rodape a {
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.rodape a:hover {
+    color: var(--verde-claro);
+}
+
+.redes-sociais {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociais a {
+    transition: var(--transicao-padrao);
+}
+
+.redes-sociais a:hover {
+    transform: translateY(-3px);
+}
+
+/* 8. Animações de Scroll */
+.animar {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar.visivel {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 9. Responsividade */
+@media (max-width: 768px) {
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .cabecalho .container {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
