@@ -1,0 +1,104 @@
+/* 
+  Estilização para a página da ONG Patinhas Felizes
+  Autor: [Vitor Silva]
+  Data: 24/09/2025
+*/
+
+/* 1. Variáveis de Cores e Fontes */
+:root 
+{
+    --verde-principal: #2E8B57;
+    --verde-claro: #3CB371;
+    --verde-escuro: #228B22;
+    --verde-suave: #E8F5E8;
+    --branco: #FFFFFF;
+    --branco-suave: #F8F9FA;
+    --cinza-texto: #4A4A4A;
+    --sombra-verde: rgba(46, 139, 87, 0.1);
+    --vermelho-erro: #e74c3c;
+
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-titulos: 'Lora', serif;
+    --transicao-padrao: all 0.3s ease-in-out;
+}
+
+/* 2. Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body 
+{
+    font-family: var(--fonte-principal);
+    line-height: 1.6;
+    color: var(--cinza-texto);
+    background-color: var(--branco-suave);
+}
+
+.container 
+{
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3 
+{
+    font-family: var(--fonte-titulos);
+    color: var(--verde-escuro);
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 3.2rem; line-height: 1.2; }
+h2 { font-size: 2.5rem; text-align: center; margin-bottom: 2rem; }
+h3 { font-size: 1.5rem; font-family: var(--fonte-principal); font-weight: 600; }
+
+section 
+{
+    padding: 80px 0;
+    overflow-x: hidden; /* Evita scroll horizontal causado por animações */
+}
+
+/* 3. Botões */
+.btn 
+{
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: var(--transicao-padrao);
+    border: 2px solid transparent;
+    cursor: pointer;
+}
+
+.btn-principal 
+{
+    background-color: var(--verde-principal);
+    color: var(--branco);
+    box-shadow: 0 4px 15px rgba(46, 139, 87, 0.2);
+}
+
+.btn-principal:hover 
+{
+    background-color: var(--verde-claro);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(46, 139, 87, 0.3);
+}
+
+.btn-secundario 
+{
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--branco);
+    border-color: var(--branco);
+    backdrop-filter: blur(5px);
+}
+
+.btn-secundario:hover 
+{
+    background-color: var(--branco);
+    color: var(--verde-principal);
+}
