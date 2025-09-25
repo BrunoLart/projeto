@@ -102,3 +102,77 @@ section
     background-color: var(--branco);
     color: var(--verde-principal);
 }
+
+/* 4. Cabeçalho */
+.cabecalho 
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.cabecalho.rolagem 
+{
+    padding: 0.5rem 0;
+    background-color: var(--branco);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cabecalho .container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo 
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-principal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalho nav ul 
+{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho nav a 
+{
+    text-decoration: none;
+    color: var(--verde-escuro);
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.cabecalho nav a::after 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--verde-claro);
+    transition: width 0.3s;
+}
+
+.cabecalho nav a:hover::after 
+{
+    width: 100%;
+}
