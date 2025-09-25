@@ -102,3 +102,498 @@ section
     background-color: var(--branco);
     color: var(--verde-principal);
 }
+
+/* 4. Cabeçalho */
+.cabecalho 
+{
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.cabecalho.rolagem 
+{
+    padding: 0.5rem 0;
+    background-color: var(--branco);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.cabecalho .container 
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo 
+{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--verde-principal);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cabecalho nav ul 
+{
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.cabecalho nav a 
+{
+    text-decoration: none;
+    color: var(--verde-escuro);
+    font-size: 1.1rem;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.cabecalho nav a::after 
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--verde-claro);
+    transition: width 0.3s;
+}
+
+.cabecalho nav a:hover::after 
+{
+    width: 100%;
+}
+
+/* 5. Seção Hero */
+.hero 
+{
+    background: linear-gradient(to right, rgba(46, 139, 87, 0.7), transparent), url('https://placedog.net/1200/800?id=10') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.hero .container 
+{
+    text-align: left;
+    max-width: 600px;
+    margin-left: 10%;
+}
+
+.hero h1 
+{
+    color: var(--branco);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero p 
+{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero .btn 
+{
+    margin-right: 15px;
+}
+
+/* 6. Seção Sobre */
+.sobre 
+{
+    background-color: var(--branco);
+}
+
+.cards-sobre 
+{
+    display: flex;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.cards-sobre .card 
+{
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    border-bottom: 5px solid var(--verde-principal);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
+    transition: var(--transicao-padrao);
+}
+
+.cards-sobre .card:hover 
+{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px -15px rgba(46, 139, 87, 0.3);
+}
+
+.card-icon 
+{
+    color: var(--verde-principal);
+    margin-bottom: 1rem;
+}
+
+/* 7. Seção Animais */
+.galeria-animais 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-animal 
+{
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--sombra-verde);
+    text-align: center;
+    transition: var(--transicao-padrao);
+}
+
+.card-animal:hover 
+{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.2);
+}
+
+.card-animal img 
+{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-animal:hover img 
+{
+    transform: scale(1.05);
+}
+
+.card-animal h3, .card-animal p 
+{
+    padding: 0.5rem 1rem;
+}
+.card-animal .btn 
+{
+    margin: 1rem 0;
+    padding: 10px 24px;
+}
+
+/* 8. Seções de Formulário (Doações e Newsletter) */
+.doacoes, .newsletter 
+{
+    background-color: var(--verde-suave);
+}
+
+.form-doacao 
+{
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: var(--branco);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--sombra-verde);
+    position: relative;
+}
+
+.form-grupo 
+{
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+textarea 
+{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+}
+
+textarea 
+{
+    min-height: 150px;
+    resize: vertical;
+    font-family: var(--fonte-principal);
+}
+
+input:focus,
+textarea:focus 
+{
+    outline: none;
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 3px var(--sombra-verde);
+}
+
+/* Estilos de validação */
+.form-grupo.sucesso input,
+.form-grupo.sucesso textarea 
+{
+    border-color: var(--verde-claro);
+}
+
+.form-grupo.erro input,
+.form-grupo.erro textarea 
+{
+    border-color: var(--vermelho-erro);
+}
+
+.mensagem-erro 
+{
+    color: var(--vermelho-erro);
+    font-size: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.form-grupo.erro .mensagem-erro 
+{
+    opacity: 1;
+}
+
+
+.form-doacao .valores-doacao 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.btn-valor 
+{
+    flex: 1;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--verde-principal);
+    background-color: var(--branco);
+    color: var(--verde-principal);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    border-radius: 5px;
+}
+
+.btn-valor:hover, .btn-valor.selecionado 
+{
+    background-color: var(--verde-principal);
+    color: var(--branco);
+}
+
+.form-newsletter .checkbox-container 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-newsletter input[type="checkbox"] 
+{
+    margin-right: 10px;
+}
+
+/* 9. Rodapé */
+.rodape 
+{
+    background-color: var(--verde-escuro);
+    color: var(--branco-suave);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.rodape a 
+{
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.rodape a:hover 
+{
+    color: var(--verde-claro);
+}
+
+.redes-sociais 
+{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociais a 
+{
+    transition: var(--transicao-padrao);
+}
+
+.redes-sociais a:hover 
+{
+    transform: translateY(-3px);
+}
+
+
+/* 10. Pop-ups Laterais */
+.popup-lateral 
+{
+    position: fixed;
+    bottom: 20px;
+    width: 280px; /* Mais estreito */
+    background-color: var(--branco);
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 2000;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+#popup-noticias 
+{
+    left: 20px; /* Trocado para a esquerda */
+    border-right: 4px solid var(--verde-principal); /* Borda na direita */
+    z-index: 2001; /* Garante que fique por cima do de dicas */
+}
+
+#popup-dicas 
+{
+    right: 20px; /* Trocado para a direita */
+    border-left: 4px solid var(--verde-principal); /* Borda na esquerda */
+}
+
+.popup-lateral.visivel 
+{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fechar-popup 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--cinza-texto);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.fechar-popup:hover 
+{
+    transform: scale(1.2);
+}
+
+.conteudo-popup 
+{
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.conteudo-popup img 
+{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.conteudo-popup h3 
+{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.conteudo-popup p 
+{
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 11. Animações de Scroll */
+.animar 
+{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar.visivel 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 12. Responsividade */
+@media (max-width: 992px) 
+{
+    .hero .container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 768px) 
+{
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .cabecalho .container 
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero .container 
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cards-sobre 
+    {
+        flex-direction: column;
+    }
+
+    .popup-lateral 
+    {
+        width: calc(100% - 40px);
+        max-width: 300px;
+    }
+}
