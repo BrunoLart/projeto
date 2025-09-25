@@ -417,3 +417,183 @@ textarea:focus
 {
     margin-right: 10px;
 }
+
+/* 9. Rodapé */
+.rodape 
+{
+    background-color: var(--verde-escuro);
+    color: var(--branco-suave);
+    text-align: center;
+    padding: 30px 0;
+}
+
+.rodape a 
+{
+    color: var(--branco);
+    text-decoration: none;
+}
+
+.rodape a:hover 
+{
+    color: var(--verde-claro);
+}
+
+.redes-sociais 
+{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.redes-sociais a 
+{
+    transition: var(--transicao-padrao);
+}
+
+.redes-sociais a:hover 
+{
+    transform: translateY(-3px);
+}
+
+
+/* 10. Pop-ups Laterais */
+.popup-lateral 
+{
+    position: fixed;
+    bottom: 20px;
+    width: 280px; /* Mais estreito */
+    background-color: var(--branco);
+    border-radius: 15px; /* Bordas mais arredondadas */
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    z-index: 2000;
+    transform: translateY(150%);
+    opacity: 0;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    overflow: hidden; /* Garante que a imagem não vaze */
+}
+
+#popup-noticias 
+{
+    left: 20px; /* Trocado para a esquerda */
+    border-right: 4px solid var(--verde-principal); /* Borda na direita */
+    z-index: 2001; /* Garante que fique por cima do de dicas */
+}
+
+#popup-dicas 
+{
+    right: 20px; /* Trocado para a direita */
+    border-left: 4px solid var(--verde-principal); /* Borda na esquerda */
+}
+
+.popup-lateral.visivel 
+{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.fechar-popup 
+{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--cinza-texto);
+    transition: transform 0.2s;
+    z-index: 1;
+}
+
+.fechar-popup:hover 
+{
+    transform: scale(1.2);
+}
+
+.conteudo-popup 
+{
+    padding: 1.2rem;
+    text-align: center;
+}
+
+.conteudo-popup img 
+{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.conteudo-popup h3 
+{
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.conteudo-popup p 
+{
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+/* 11. Animações de Scroll */
+.animar 
+{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animar.visivel 
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* 12. Responsividade */
+@media (max-width: 992px) 
+{
+    .hero .container {
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
+
+@media (max-width: 768px) 
+{
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    
+    .cabecalho .container 
+    {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero .container 
+    {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .cards-sobre 
+    {
+        flex-direction: column;
+    }
+
+    .popup-lateral 
+    {
+        width: calc(100% - 40px);
+        max-width: 300px;
+    }
+}
