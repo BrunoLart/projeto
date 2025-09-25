@@ -297,3 +297,123 @@ section
     margin: 1rem 0;
     padding: 10px 24px;
 }
+
+/* 8. Seções de Formulário (Doações e Newsletter) */
+.doacoes, .newsletter 
+{
+    background-color: var(--verde-suave);
+}
+
+.form-doacao 
+{
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: var(--branco);
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--sombra-verde);
+    position: relative;
+}
+
+.form-grupo 
+{
+    margin-bottom: 1rem;
+    position: relative;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="tel"],
+textarea 
+{
+    width: 100%;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    transition: all 0.3s;
+}
+
+textarea 
+{
+    min-height: 150px;
+    resize: vertical;
+    font-family: var(--fonte-principal);
+}
+
+input:focus,
+textarea:focus 
+{
+    outline: none;
+    border-color: var(--verde-principal);
+    box-shadow: 0 0 0 3px var(--sombra-verde);
+}
+
+/* Estilos de validação */
+.form-grupo.sucesso input,
+.form-grupo.sucesso textarea 
+{
+    border-color: var(--verde-claro);
+}
+
+.form-grupo.erro input,
+.form-grupo.erro textarea 
+{
+    border-color: var(--vermelho-erro);
+}
+
+.mensagem-erro 
+{
+    color: var(--vermelho-erro);
+    font-size: 0.8rem;
+    position: absolute;
+    left: 0;
+    bottom: -18px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.form-grupo.erro .mensagem-erro 
+{
+    opacity: 1;
+}
+
+
+.form-doacao .valores-doacao 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 1rem;
+}
+
+.btn-valor 
+{
+    flex: 1;
+    margin: 0;
+    padding: 12px;
+    border: 1px solid var(--verde-principal);
+    background-color: var(--branco);
+    color: var(--verde-principal);
+    cursor: pointer;
+    transition: var(--transicao-padrao);
+    border-radius: 5px;
+}
+
+.btn-valor:hover, .btn-valor.selecionado 
+{
+    background-color: var(--verde-principal);
+    color: var(--branco);
+}
+
+.form-newsletter .checkbox-container 
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.form-newsletter input[type="checkbox"] 
+{
+    margin-right: 10px;
+}
