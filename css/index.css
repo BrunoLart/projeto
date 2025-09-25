@@ -176,3 +176,124 @@ section
 {
     width: 100%;
 }
+
+/* 5. Seção Hero */
+.hero 
+{
+    background: linear-gradient(to right, rgba(46, 139, 87, 0.7), transparent), url('https://placedog.net/1200/800?id=10') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--branco);
+}
+
+.hero .container 
+{
+    text-align: left;
+    max-width: 600px;
+    margin-left: 10%;
+}
+
+.hero h1 
+{
+    color: var(--branco);
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.hero p 
+{
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    max-width: 500px;
+}
+
+.hero .btn 
+{
+    margin-right: 15px;
+}
+
+/* 6. Seção Sobre */
+.sobre 
+{
+    background-color: var(--branco);
+}
+
+.cards-sobre 
+{
+    display: flex;
+    gap: 30px;
+    margin-top: 2rem;
+}
+
+.cards-sobre .card 
+{
+    background-color: var(--branco);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    flex: 1;
+    border-bottom: 5px solid var(--verde-principal);
+    box-shadow: 0 10px 30px -15px rgba(0,0,0,0.1);
+    transition: var(--transicao-padrao);
+}
+
+.cards-sobre .card:hover 
+{
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px -15px rgba(46, 139, 87, 0.3);
+}
+
+.card-icon 
+{
+    color: var(--verde-principal);
+    margin-bottom: 1rem;
+}
+
+/* 7. Seção Animais */
+.galeria-animais 
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card-animal 
+{
+    background-color: var(--branco);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--sombra-verde);
+    text-align: center;
+    transition: var(--transicao-padrao);
+}
+
+.card-animal:hover 
+{
+    transform: translateY(-10px);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.2);
+}
+
+.card-animal img 
+{
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card-animal:hover img 
+{
+    transform: scale(1.05);
+}
+
+.card-animal h3, .card-animal p 
+{
+    padding: 0.5rem 1rem;
+}
+.card-animal .btn 
+{
+    margin: 1rem 0;
+    padding: 10px 24px;
+}
