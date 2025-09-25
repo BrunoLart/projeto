@@ -1,7 +1,4 @@
-// Arquivo: js/cadastro.js
-// JavaScript específico para a página de Cadastro
-// Autor: [Seu Nome]
-// Data: 24/09/2025
+
 
 document.addEventListener('DOMContentLoaded', () => {
 

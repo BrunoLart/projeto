@@ -1,6 +1,3 @@
-// Arquivo: js/index.js
-// Autor: [Vitor Silva]
-// Data: 24/09/2025
 
 document.addEventListener('DOMContentLoaded', () => 
 {

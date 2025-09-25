@@ -1,7 +1,4 @@
-// Arquivo: js/contato.js
-// JavaScript específico para a página de Contato
-// Autor: [Seu Nome]
-// Data: 24/09/2025
+
 
 document.addEventListener('DOMContentLoaded', () => {
 
