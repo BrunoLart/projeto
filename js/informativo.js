@@ -1,7 +1,3 @@
-// Arquivo: js/informativo.js
-// JavaScript específico para a página de Informativo
-// Autor: [Seu Nome]
-// Data: 24/09/2025
 
 document.addEventListener('DOMContentLoaded', () => {
 
