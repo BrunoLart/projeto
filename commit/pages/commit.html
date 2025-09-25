@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Histórico de Commits - Projeto GitHub</title>
+    <link rel="stylesheet" href="../css/commit.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="../img/image.png" alt="Equipe Unicórnio Logo" class="navbar-logo">
+                Equipe Unicórnio
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="organizacao.html">Organização</a></li>
+                <li><a href="commit.html">Commits</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="main-content container">
+        <aside class="filters-sidebar">
+            <h2>Filtros</h2>
+            <div class="filter-controls">
+                <input type="text" id="search-input" placeholder="Buscar commits...">
+                <button class="filter-btn active" onclick="filterCommits('all')">Todos</button>
+                <button class="filter-btn" onclick="filterCommits('merge')">Merge Requests</button>
+                <button class="filter-btn" onclick="filterCommits('regular')">Commits Regulares</button>
+            </div>
+            
+            <h2>Contribuidores</h2>
+            <div class="contributors-filters">
+                <button class="filter-btn" onclick="filterCommits('bruno')">Bruno Silva</button>
+                <button class="filter-btn" onclick="filterCommits('charles')">Charles de Aguiar</button>
+                <button class="filter-btn" onclick="filterCommits('vitor')">vitorCCSS</button>
+                <button class="filter-btn" onclick="filterCommits('emanuel')">Emanuel Oliveira</button>
+            </div>
+
+            <h2>Estatísticas</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <span class="stat-number" id="totalCommits">0</span>
+                    <div class="stat-label">Total de Commits</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="mergeRequests">0</span>
+                    <div class="stat-label">Merge Requests</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="contributors">4</span>
+                    <div class="stat-label">Contribuidores</div>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" id="activeDays">2</span>
+                    <div class="stat-label">Dias Ativos</div>
+                </div>
+            </div>
+        </aside>
+
+        <section class="timeline-section">
+            <div class="timeline" id="timeline">
+                <!-- Commits serão inseridos aqui pelo JS, mantendo a estrutura original por enquanto -->
+                <!-- Commits do dia 25/09/2025 -->
+                <div class="commit-group">
+                    <div class="date-header">
+                        <h2>25 de Setembro, 2025</h2>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 FIX: Ajustes finais de css e pagina informativo.html</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                                <span class="commit-hash">main</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update informativo.css</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update contato.css</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update cadastro.css</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update README.md</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #15 from BrunoLart/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#15</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🎨 Alteração final de estilização</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 Adicionando estilização da seção formulário e validações</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🎨 Adicionando estilização de seções</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">💇‍♂️ Adicionando estilização do cabeçalho</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #14 from BrunoLart/emanuel</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#14</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">emanuel → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">🔧 Adicionando correções ao cadastro e contato e adicionando os scripts e estilos do css</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #13 from BrunoLart/charles</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>Charles de aguiar</span>
+                                </div>
+                                <span class="pr-badge">#13</span>
+                            </div>
+                            <div class="branch-info">charles → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">💻 projeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #12 from BrunoLart/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#12</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🎨 Adicionando primeira parte da estilização</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📄 Alterando arquivo index.html, index.js e adicionando pasta index.css</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🎬 Adicionando animações e form de doação no JS</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🎞️ Adicionando rolagem suave e animações no JS</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commits do dia 24/09/2025 -->
+                <div class="commit-group">
+                    <div class="date-header">
+                        <h2>24 de Setembro, 2025</h2>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #11 from BrunoLart/charles</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>Charles de aguiar</span>
+                                </div>
+                                <span class="pr-badge">#11</span>
+                            </div>
+                            <div class="branch-info">charles → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">💻 projeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #10 from BrunoLart/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>BrunoLart</span>
+                                </div>
+                                <span class="pr-badge">#10</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🏁 Finalizando pagina index e adicionando NavBar no java</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📰 Adicionando a parte noticias</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📅 ultima alteraçao dia 23.09</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🔧 Primeiras modificações</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #9 from BrunoLart/charles</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                                <span class="pr-badge">#9</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">charles → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">💻 prjeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #8 from BrunoLart/emanuel</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>BrunoLart</span>
+                                </div>
+                                <span class="pr-badge">#8</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">emanuel → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Adicionando página de cadastro no programa</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">🚀 Iniciando trabalhos 24/09</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">🔧 ajuste</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>BrunoLart</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update de dados no readme</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update README.md</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update README.md</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📊 update: dados de commit</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Update README.md</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">✅ Finalizando o commit da edição do dia 23/09</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">📞 ajuste contato</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' into emanuel</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main → emanuel</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #7 from BrunoLart/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#7</span>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' into vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main → vitor</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' of https://github.com/BrunoLart/projeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main merge</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">🔧 Fix: Renomear arquivos e arrumar estrutura</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #6 from BrunoLart/emanuel</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>Emanuel Oliveira</span>
+                                </div>
+                                <span class="pr-badge">#6</span>
+                            </div>
+                            <div class="branch-info">emanuel → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">🔧 alteração</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🧪 Testando arquivo</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' into vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main → vitor</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'vitor' of https://github.com/BrunoLart/projeto into vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">vitor branch merge</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📄 Documentação da pagina principal</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">📞 Criando página de contato</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="emanuel">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Documentação página de cadastro.</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">EO</div>
+                                    <span>emanueloliveirasenai</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Commits anteriores -->
+                <div class="commit-group">
+                    <div class="date-header">
+                        <h2>Commits Anteriores</h2>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' of https://github.com/BrunoLart/projeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main merge</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #4 from BrunoLart/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                                <span class="pr-badge">#4</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge branch 'main' into vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                            </div>
+                            <div class="branch-info">main → vitor</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #3 from vitorCCSS/vitor</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#3</span>
+                            </div>
+                            <div class="branch-info">vitor → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">📄 Documentação da página inicial do sistema</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="vitor">
+                        <div class="commit-content">
+                            <div class="commit-message">🧪 testeeee</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">VC</div>
+                                    <span>vitorCCSS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #5 from BrunoLart/charles</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>Charles de aguiar</span>
+                                </div>
+                                <span class="pr-badge">#5</span>
+                            </div>
+                            <div class="branch-info">charles → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 Feat: doc documentacao_informativo</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📁 subindo-arquivo</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">💻 projeto</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>CHARLES DE AGUIAR</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">✏️ edit</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item merge-commit" data-type="merge" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message merge-message">🔀 Merge pull request #1 from charlesaguiar93/charles</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="pr-badge">#1</span>
+                            </div>
+                            <div class="branch-info">charles → main</div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 projeto-adicionar-tarefas</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 projeto-adicionar-tarefas</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 projeto-adicionar-tarefas</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 projeto-adicionar</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">📋 projeto-adicionar-tarefas</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="charles">
+                        <div class="commit-content">
+                            <div class="commit-message">🧪 teste2</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">CA</div>
+                                    <span>charlesaguiar93</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">📝 Create README.md</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                                <span class="verified-badge">Verified</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="commit-item regular-commit" data-type="regular" data-author="bruno">
+                        <div class="commit-content">
+                            <div class="commit-message">🎯 feat: add index.html</div>
+                            <div class="commit-meta">
+                                <div class="author">
+                                    <div class="author-avatar">BS</div>
+                                    <span>Bruno Silva</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="../js/commit.js"></script>
+</body>
+</html>

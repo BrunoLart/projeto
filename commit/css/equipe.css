@@ -1,0 +1,142 @@
+:root {
+    --color-bg-primary: #0d1117;
+    --color-bg-secondary: #161b22;
+    --color-text-primary: #e6edf3;
+    --color-text-secondary: #8b949e;
+    --color-border-primary: #30363d;
+    --color-border-secondary: #21262d;
+    --color-accent-primary: #58a6ff;
+    --font-family-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --border-radius-default: 6px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family-sans);
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Navbar */
+.navbar {
+    background-color: var(--color-bg-secondary);
+    border-bottom: 1px solid var(--color-border-primary);
+    padding: 1rem 0;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-text-primary);
+    text-decoration: none;
+}
+
+.navbar-logo {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar-nav a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.navbar-nav a:hover {
+    color: var(--color-text-primary);
+}
+
+/* Page Header */
+.page-header {
+    text-align: center;
+    margin: 2rem 0 3rem 0;
+}
+
+.page-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-header p {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+
+/* Team Grid */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+}
+
+.team-member-card {
+    background-color: var(--color-bg-secondary);
+    border: 1px solid var(--color-border-primary);
+    border-radius: var(--border-radius-default);
+    text-align: center;
+    padding: 2rem 1rem;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.team-member-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.team-member-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border: 3px solid var(--color-border-primary);
+}
+
+.team-member-card h3 {
+    font-size: 1.2rem;
+    color: var(--color-text-primary);
+    margin-bottom: 0.25rem;
+}
+
+.team-member-card span {
+    color: var(--color-accent-primary);
+    font-weight: 500;
+}
+
+.team-member-card p {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+    margin-top: 0.75rem;
+}

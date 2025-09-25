@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organização - Projeto</title>
+    <link rel="stylesheet" href="../css/organizacao.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="navbar-brand">
+                <img src="../img/image.png" alt="Equipe Unicórnio Logo" class="navbar-logo">
+                Equipe Unicórnio
+            </a>
+            <ul class="navbar-nav">
+                <li><a href="../index.html">Início</a></li>
+                <li><a href="organizacao.html">Organização</a></li>
+                <li><a href="commit.html">Commits</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container content-page">
+        <div class="page-header">
+            <h1>Organização do Projeto: Patinhas Felizes 🐾</h1>
+            <p>Uma visão geral de como nosso time colaborou para construir o site da ONG, utilizando Git e GitHub.</p>
+        </div>
+
+        <section>
+            <h2>Sobre o Projeto</h2>
+            <p>O "Patinhas Felizes" é um site institucional fictício para uma ONG de resgate de animais. O principal objetivo do projeto foi servir como uma atividade prática de Desenvolvimento Colaborativo, permitindo que a equipe aplicasse conceitos de Git e GitHub em um cenário real, incluindo o uso de versionamento, branches, pull requests e merges para trabalhar de forma coesa e organizada.</p>
+        </section>
+
+        <section>
+            <h2>Metodologia de Trabalho</h2>
+            <p>A equipe foi organizada com um Tech Lead e três desenvolvedores. A metodologia de trabalho foi centrada no GitHub, seguindo os seguintes passos:</p>
+            <ul>
+                <li>O projeto foi dividido em tarefas claras, gerenciadas através das Issues do GitHub.</li>
+                <li>Cada desenvolvedor trabalhava em uma branch separada para implementar suas funcionalidades, evitando conflitos na branch principal (<code>main</code>).</li>
+                <li>Ao finalizar uma tarefa, o desenvolvedor abria um Pull Request para que seu código fosse revisado pelo Tech Lead.</li>
+                <li>Após a revisão e aprovação, o código era mesclado (merge) à branch <code>main</code>.</li>
+            </ul>
+            <p>A imagem abaixo ilustra o nosso quadro Kanban utilizado para o gerenciamento das tarefas:</p>
+            <img src="../img/tarefas.png" alt="Quadro Kanban do projeto" class="kanban-image">
+        </section>
+
+        <section>
+            <h2>Tecnologias Utilizadas</h2>
+            <p>Para a construção do projeto, utilizamos as seguintes tecnologias web fundamentais:</p>
+            <ul>
+                <li><strong>HTML5:</strong> Para a estruturação e semântica do conteúdo das páginas.</li>
+                <li><strong>CSS3:</strong> Para a estilização, design responsivo e identidade visual do site.</li>
+                <li><strong>JavaScript (ES6):</strong> Para criar funcionalidades interativas, como a validação de formulários.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Estrutura dos Arquivos</h2>
+            <p>O projeto foi organizado com uma estrutura de pastas clara para separar responsabilidades:</p>
+            <pre><code>projeto/
+├── css/
+│   ├── cadastro.css
+│   ├── contato.css
+│   ├── index.css
+│   └── informativo.css
+├── documentacao/
+│   ├── documentacao_cadastro.md
+│   ├── documentacao_index.md
+│   └── documentacao_informativo.md
+├── index.html
+├── js/
+│   ├── cadastro.js
+│   ├── contato.js
+│   ├── index.js
+│   └── informativo.js
+├── pages/
+│   ├── cadastro.html
+│   ├── contato.html
+│   └── informativo.html
+└── README.md
+</code></pre>
+        </section>
+    </main>
+
+    <script src="../js/organizacao.js"></script>
+</body>
+</html>
